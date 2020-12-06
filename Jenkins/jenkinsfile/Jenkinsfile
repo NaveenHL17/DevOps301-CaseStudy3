@@ -28,5 +28,5 @@ node {
     archive 'target/*.war'
  }
 
- 
+ }
 }
