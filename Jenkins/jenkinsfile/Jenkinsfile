@@ -24,7 +24,7 @@ node {
     sh 'mvn package'
  }
  
- stage('Archive Artifacts') {
+ stage('Archive Artifacts to Artifactory') {
     archiveArtifacts artifacts: '**/*.war', followSymlinks: false
  }
 
