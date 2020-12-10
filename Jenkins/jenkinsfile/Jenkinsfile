@@ -35,7 +35,7 @@ rtUpload (
           "files": [
             {
               "pattern": "**/*.war",
-			  "target": "naveen/"
+			  "target": "generic-snapshot/"
               
             }
          ]
