@@ -1,5 +1,7 @@
 node {
  
+ emailext body: 'test!!', subject: 'Pipeline Job started', to: 'naveenhl026@gmail.com'
+ 
  stage('Git CheckOut') {
     git branch: 'main', url: 'https://github.com/NaveenHL17/DevOps301-CaseStudy3.git'
  }
@@ -64,6 +66,8 @@ rtUpload (
  stage('Ansible Deployment') {
     sh 'ansible-playbook webserver.yaml'
  }
+
+ emailext body: 'test!!', subject: 'Pipeline Job Ended Successfully', to: 'naveenhl026@gmail.com'
 
  }
 }
