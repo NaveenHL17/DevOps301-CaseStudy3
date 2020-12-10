@@ -1,4 +1,5 @@
 node {
+ try {
  
  emailext body: 'test!!', subject: 'Pipeline Job started', to: 'naveenhl026@gmail.com'
  
@@ -66,8 +67,10 @@ rtUpload (
  stage('Ansible Deployment') {
     sh 'ansible-playbook webserver.yaml'
  }
-
- emailext body: 'test!!', subject: 'Pipeline Job Ended Successfully', to: 'naveenhl026@gmail.com'
-
  }
+ 
+ } catch (err) {
+     emailext body: "$(err)", subject: 'Pipeline Job Failed!!', to: 'naveenhl026@gmail.com'
+	 }
+	 
 }
