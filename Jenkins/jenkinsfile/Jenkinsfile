@@ -48,7 +48,12 @@ rtUpload (
     buildName: 'petclinic',
     buildNumber: '1'
 )
-
 }
+
+  stage('SonarQube analysis') {
+    def sonarqubeScannerHome = tool name: 'SonarQube'
+    sh "${sonarqubeScannerHome}/bin/sonar-scanner"
+}
+
  }
 }
