@@ -70,7 +70,7 @@ rtUpload (
  }
  
  } catch (err) {
-     emailext body: "$(err)", subject: 'Pipeline Job Failed!!', to: 'naveenhl026@gmail.com'
+     emailext body: "${err}", subject: 'Pipeline Job Failed!!', to: 'naveenhl026@gmail.com'
 	 }
 	 
 }
