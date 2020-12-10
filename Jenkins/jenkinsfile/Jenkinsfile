@@ -28,13 +28,14 @@ node {
     archive 'target/*.war'
  }
 
- stage('Archive Artifacts') {
+ stage('Archive into Artifactory') {
 rtUpload (
     serverId: '1',
     spec: '''{
           "files": [
             {
               "pattern": "**/*.war",
+			  "target": "naveen/"
               
             }
          ]
